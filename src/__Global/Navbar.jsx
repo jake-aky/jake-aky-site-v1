@@ -24,7 +24,7 @@ const Navbar = () => {
     <div className="navbar">
       <div className="navbar-wrapper">
         <div className="navbar-logo">
-          <img className="navbar-logo__img" src="./src/assets/bonsai.jpg" alt="" />
+          <img className="navbar-logo__img" src="./src/assets/logo-m.png" alt="" />
         </div>
         {toggleBurger ?
         <div>
