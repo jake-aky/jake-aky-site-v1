@@ -23,6 +23,9 @@
   --size-page-padding-left: 1em;
   --size-page-padding-right: 1em;
   --size-page-padding-top: 2em;
+  --size-page-margin-top: 5em;
+  --size-margin-l:4rem;
+  --size-margin-m:1rem;
   --border-radius:50px;
 
   /*// Font Size + Family + Weight + Line Height //*/
@@ -35,6 +38,9 @@
   --font-weight-s:400;
   --font-weight-xs:300;
 
+  --font-size-xl:2.8em;
+  --font-size-l:1.2em;
+  --font-size-m:1em;
   /*// Transitions //*/
   --transition-text-link:all 0.25s ease-out;
 
@@ -146,6 +152,7 @@
   padding: 0.5em 1.5em;
 
   font-weight: var(--font-weight-s);
+  font-size: var(--font-size-m);
 
   border-radius: var(--border-radius);
 
@@ -160,17 +167,67 @@
   color: var(--clr-black);
 }
 
-.test-1{
-  margin-top: 100px;
-  font-family: var(--font-heading);
+
+/*  Image Header
+==========================================*/
+
+.image-header{
+  padding: 150px 50px 50px 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(41.04deg, #ddebf3 1.34%, #ffffff00 42.39%), linear-gradient(201.1deg, #fff0e0 5.95%, #ffffff00 73.3%), linear-gradient(119.18deg, #d7efdf -6.66%, #ffffff00 39.22%), #ffeceb;
 }
+.image-header__container{
+  max-width: 1380px;
+  display: flex;
+}
+.image-header__text-container{
+  flex-basis: 40%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.heading-title{
+  font-family: var(--font-heading);
+  font-size: var(--font-size-xl);
+
+  margin-bottom: var(--size-margin-m);
+}
+.heading-button{
+  margin-top: var(--size-margin-l);
+}
+.heading-paragraph{
+  font-weight: var(--font-weight-xs);
+  font-size: var(--font-size-l);
+}
+.image-header__img-container{
+  flex-basis: 60%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.image-header__img{
+  max-width: 800px;
+
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
 
 @media screen and (max-width: 1032px) {
   .navbar-wrapper{
     max-width: calc(100vw - var(--size-page-padding-left) - var(--size-page-padding-right));
   }
 }
-@media screen and (max-width: 632px) {
+@media screen and (max-width: 864px) {
   .navbar{
     top: 0;
   }

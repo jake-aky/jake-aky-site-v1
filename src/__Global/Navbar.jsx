@@ -11,7 +11,7 @@ const Navbar = () => {
     const handleResize = () => setWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
 
-    if(width <= 632) {
+    if(width <= 864) {
 			setToggleBurger(true)
 		} else {
 			setToggleBurger(false)
