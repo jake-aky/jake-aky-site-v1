@@ -1,8 +1,9 @@
 import HomeCards from "../Data/HomeCards.json"
 import Navbar from "../__Global/Navbar"
 import ImageHeader from "../__Global/ImageHeader"
-import HeadingCards from "./HeadingCards"
+import HeadingBlock from "./HeadingBlock"
 import Footer from "../__Global/Footer"
+import LinkCards from "./LinkCards"
 const HomePage = () => {
 
   return (
@@ -15,7 +16,8 @@ const HomePage = () => {
         btnLink="/"
         img="../src/assets/HomeAssets/headshot.jpg"
       />
-      <HeadingCards CardData={HomeCards} />
+      <HeadingBlock />
+      <LinkCards CardData={HomeCards} />
       <Footer />
     </>
   )
