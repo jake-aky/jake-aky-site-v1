@@ -1,15 +1,19 @@
-const ImageHeader = () => {
+import { Link } from "react-router-dom"
+
+const ImageHeader = ({btnLink,btnText,paragraph,title, img}) => {
 
   return (
     <div className="image-header">
       <div className="image-header__container">
         <div className="image-header__text-container">
-          <h1 className="heading-title" >Learn Front End Development at Your Pace</h1>
-          <p className="heading-paragraph">Explore my guides & tips on how to achieve that pixel perfect finish you strive for. Being surrounded by world experts within the WordPress Development sector, I am learning how to do things the right way from the very beginning. Learn more about me, what I do or how to get in touch.</p>
-          <button className="dark-button heading-button">Blog</button>
+          <h1 className="heading-title" >{title}</h1>
+          <p className="heading-paragraph">{paragraph}</p>
+          <Link>
+            <button to={btnLink} className="dark-button heading-button">{btnText}</button>
+          </Link>
         </div>
         <div className="image-header__img-container">
-          <img className="image-header__img" src="../src/assets/HomeAssets/headshot.jpg" alt="" />
+          <img className="image-header__img" src={img} alt="" />
         </div>
       </div>
     </div>

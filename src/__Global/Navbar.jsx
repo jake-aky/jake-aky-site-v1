@@ -23,11 +23,8 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="navbar-wrapper">
-        {/* <div className="navbar-container">
-        </div> */}
         <div className="navbar-logo">
           <img className="navbar-logo__img" src="./src/assets/bonsai.jpg" alt="" />
-          {/* <span className="navbar-logo__title">AKY</span> */}
         </div>
         {toggleBurger ?
         <div>

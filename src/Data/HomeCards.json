@@ -1,0 +1,27 @@
+[
+  {
+    "id": "1",
+    "title": "Guides",
+    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper aliquet.",
+    "btnText": "Guides",
+    "btnLink": "/",
+    "icon": "📚"
+  },
+  {
+    "id": "2",
+    "title": "Tips",
+    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper aliquet.",
+    "btnText": "Tips",
+    "btnLink": "/",
+    "icon": "📝"
+  },
+  {
+    "id": "3",
+    "title": "Advice",
+    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper aliquet.",
+    "btnText": "Advice",
+    "btnLink": "/",
+    "icon": "📢"
+  }
+]
+
