@@ -1,4 +1,5 @@
 const ImageHeader = () => {
+
   return (
     <div className="image-header">
       <div className="image-header__container">

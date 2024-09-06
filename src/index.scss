@@ -48,6 +48,8 @@
 }
 
 .navbar{
+  z-index: 10;
+
   max-width: 1000px;
   width: 100vw;
 
@@ -161,6 +163,7 @@
   background-color: var(--clr-black);
 
   transition: var(--transition-text-link);
+  cursor: pointer;
 }
 .dark-button:hover{
   background-color: var(--clr-accent-1);
@@ -170,6 +173,10 @@
 
 /*  Image Header
 ==========================================*/
+
+.test-100{
+  height: 100vh;
+}
 
 .image-header{
   padding: 150px 50px 50px 50px;
@@ -238,4 +245,16 @@
   .navbar-wrapper::before{
     border-radius: 0;
   }
+}
+@media screen and (max-width: 776px) {
+  .image-header__container{
+  gap: var(--size-margin-l);
+  flex-direction: column;
+}
+.image-header__img-container{
+  justify-content: center;
+}
+.image-header__img{
+  width: 100%;
+}
 }
