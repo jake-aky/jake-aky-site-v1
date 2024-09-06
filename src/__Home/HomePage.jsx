@@ -1,7 +1,7 @@
 import HomeCards from "../Data/HomeCards.json"
 import Navbar from "../__Global/Navbar"
 import ImageHeader from "../__Global/ImageHeader"
-import HeadingBlock from "./HeadingBlock"
+import HeadingBlock from "../__Global/HeadingBlock"
 import Footer from "../__Global/Footer"
 import LinkCards from "./LinkCards"
 const HomePage = () => {
