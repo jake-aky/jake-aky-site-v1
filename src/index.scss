@@ -18,25 +18,28 @@
   --clr-grey-s:#f5f2f1bf;
   /* Accents */
   --clr-accent-1:#E8624F;
+  --clr-multicolor-gradient:linear-gradient(41.04deg, #ddebf3 1.34%, #ffffff00 42.39%), linear-gradient(201.1deg, #fff0e0 5.95%, #ffffff00 73.3%), linear-gradient(119.18deg, #d7efdf -6.66%, #ffffff00 39.22%), #ffeceb;
 
   /*// Margins + Padding + Borders //*/
-  --size-page-padding-left: 1em;
-  --size-page-padding-right: 1em;
-  --size-page-padding-top: 2em;
-  --size-page-margin-top: 5em;
 
-  --size-heading-section-padding:10rem 3.2rem 3.2rem 3.2rem;
-  --size-column-heading-section-padding:5rem 3.2rem 3.2rem 3.2rem;
-  --size-section-padding:3.2rem;
+  --spacing-m:3.2rem;
+  --spacing-xs:1rem;
+
+  --spacing-footer:10rem 0 3.2rem 0;
+
+  --size-heading-section-padding:10rem var(--spacing-m) var(--spacing-m) var(--spacing-m);
+  --size-section-padding:var(--spacing-m);
+
   --size-card-padding:2rem;
 
-  --size-margin-heading:0 0 2rem 0;
-  --size-margin-paragraph:0 0 1rem 0;
+  --text-margin-heading:0 0 2rem 0;
+  --text-margin-paragraph:0 0 1rem 0;
   --size-margin-button: 1rem 0 0 0;
 
-  --size-column-gap-m:2rem;
+  --spacing-s:2rem;
 
   --border-radius:50px;
+  --border-thin:1px solid rgb(71, 71, 71);
 
   /*// Font Size + Family + Weight + Line Height //*/
   --font-primary:"Inter", system-ui;
@@ -48,9 +51,11 @@
   --font-weight-s:400;
   --font-weight-xs:300;
 
-  --font-size-xl:2.8em;
-  --font-size-l:1.2em;
-  --font-size-m:1em;
+  --font-size-xl:2.8rem;
+  --font-size-l:2rem;
+  --font-size-s:1.2rem;
+  --font-size-xs:0.8rem;
+  --font-size-regular:1em;
   /*// Transitions //*/
   --transition-text-link:all 0.25s ease-out;
 
@@ -67,7 +72,7 @@
   margin: 0 auto;
 
   position: fixed;
-  top: var(--size-page-padding-top);
+  top: 2rem;
   left: 0;
   right: 0;
 }
@@ -123,7 +128,7 @@
   align-items: center;
   justify-content: center;
 }
-.navbar-links__link{
+.regular-link{
   font-weight: var(--font-weight-s);
 
 	position: relative;
@@ -133,7 +138,7 @@
 
   transition: all 0.2s ease-out;
 }
-.navbar-links__link::after {
+.regular-link::after {
 	content: "";
 	background-color: var(--clr-black);
 	position: absolute;
@@ -144,12 +149,12 @@
 
 	transition: var(--transition-text-link);
 }
-.navbar-links__link:hover,
-.navbar-links__link:focus {
+.regular-link:hover,
+.regular-link:focus {
 	color: var(--clr-accent-1);
 }
-.navbar-links__link:hover::after,
-.navbar-links__link:focus::after {
+.regular-link:hover::after,
+.regular-link:focus::after {
 	background-color: var(--clr-accent-1);
 	width: 100%;
 }
@@ -163,7 +168,7 @@
   padding: 0.5em 1.5em;
 
   font-weight: var(--font-weight-s);
-  font-size: var(--font-size-m);
+  font-size: var(--font-size-regular);
 
   border-radius: var(--border-radius);
 
@@ -194,7 +199,7 @@
   align-items: center;
   justify-content: center;
 
-  background: linear-gradient(41.04deg, #ddebf3 1.34%, #ffffff00 42.39%), linear-gradient(201.1deg, #fff0e0 5.95%, #ffffff00 73.3%), linear-gradient(119.18deg, #d7efdf -6.66%, #ffffff00 39.22%), #ffeceb;
+  background: var(--clr-multicolor-gradient);
 }
 .image-header__container{
   max-width: 1380px;
@@ -209,7 +214,7 @@
   align-items: flex-start;
 }
 .heading-title{
-  margin: var(--size-margin-heading);
+  margin: var(--text-margin-heading);
 
   font-family: var(--font-heading);
   font-size: var(--font-size-xl);
@@ -218,9 +223,9 @@
   margin: var(--size-margin-button);
 }
 .heading-paragraph{
-  margin: var(--size-margin-paragraph);
+  margin: var(--text-margin-paragraph);
   font-weight: var(--font-weight-xs);
-  font-size: var(--font-size-l);
+  font-size: var(--font-size-s);
 }
 .image-header__img-container{
   flex-basis: 60%;
@@ -242,18 +247,18 @@
   margin: var(--size-section-padding);
 }
 .heading-cards__title{
-  margin: var(--size-margin-heading);
+  margin: var(--text-margin-heading);
   font-family: var(--font-heading);
   font-size: var(--font-size-xl);
 }
 .heading-cards__paragraph{
-  margin: var(--size-margin-paragraph);
-  font-size: var(--font-size-l);
+  margin: var(--text-margin-paragraph);
+  font-size: var(--font-size-s);
   font-weight: var(--font-weight-xs);
 }
 
 .link-cards{
-  gap: var(--size-column-gap-m);
+  gap: var(--spacing-s);
 
   display: flex;
   flex-wrap: wrap;
@@ -269,7 +274,7 @@
   box-shadow: var(--shadow-low);
 }
 .link-card__title{
-  margin: var(--size-margin-heading);
+  margin: var(--text-margin-heading);
 
   font-size: 1.8em;
   font-weight: var(--font-weight-m);
@@ -277,10 +282,70 @@
 .link-card__paragraph{
   font-size: var(--font-weight-s);
   font-weight: var(--font-weight-s);
-  margin: var(--size-margin-paragraph);
+  margin: var(--text-margin-paragraph);
 }
 .link-card__button{
   margin: var(--size-margin-button);
+}
+
+.footer{
+  margin: var(--spacing-footer);
+}
+.footer__container{
+  width: calc(100vw - 3.2rem - 3.2rem);
+
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+
+  border: var(--border-thin);
+  border-radius: 1rem;
+}
+.footer-links{
+  flex-basis: 25%;
+
+  padding: var(--spacing-xs);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  border-right: var(--border-thin);
+}
+.footer-links__title{
+  text-transform: uppercase;
+  font-size: var(--font-size-xs);
+  margin: var(--text-margin-paragraph);
+}
+.footer__link{
+  margin: var(--text-margin-paragraph);
+}
+.footer-socials{
+  flex-basis: 50%;
+
+  display: flex;
+  flex-direction: column;
+}
+.footer-info__container{
+  flex-basis: 80%;
+
+  padding: var(--spacing-xs);
+  border-bottom: var(--border-thin);
+}
+.footer__info{
+  font-size: var(--font-size-l);
+  font-family: var(--font-heading);
+}
+.footer-brands__container{
+  padding: var(--spacing-xs);
+
+  gap: 1rem;
+
+  display: flex;
+  align-items: center;
+}
+.footer__brand{
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1032px) {
@@ -301,11 +366,11 @@
   }
 }
 @media screen and (max-width: 776px) {
-  .image-header{
-    padding: var(--size-column-heading-section-padding);
+  :root{
+    --size-heading-section-padding:5rem var(--spacing-m) var(--spacing-m) var(--spacing-m);
   }
   .image-header__container{
-    gap: var(--size-column-gap-m);
+    gap: var(--spacing-s);
     flex-direction: column;
   }
   .image-header__img-container{
@@ -319,7 +384,7 @@
     flex-direction: column;
   }
   .heading-cards__paragraph{
-    margin: var(--size-margin-heading);
+    margin: var(--text-margin-heading);
   }
   .link-card{
     flex-basis: 100%;
@@ -327,5 +392,7 @@
   }
 }
 @media screen and (max-width: 400px){
-
+  :root{
+    --spacing-m:2rem;
+  }
 }

@@ -33,8 +33,8 @@ const Navbar = () => {
         :
         <>
           <div className="navbar-links">
-            <Link className="navbar-links__link" to="/">About</Link>
-            <Link className="navbar-links__link" to="/">Contact</Link>
+            <Link className="regular-link" to="/">About</Link>
+            <Link className="regular-link" to="/">Contact</Link>
           </div>
           <div className="navbar-button">
             <Link className="dark-button" to="/">Blog</Link>

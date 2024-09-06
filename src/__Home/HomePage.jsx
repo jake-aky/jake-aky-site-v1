@@ -17,7 +17,6 @@ const HomePage = () => {
       />
       <HeadingCards CardData={HomeCards} />
       <Footer />
-      <div className="test-100"></div>
     </>
   )
 }
