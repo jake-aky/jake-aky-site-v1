@@ -8,6 +8,10 @@
 
   font-family: var(--font-primary);
 }
+body{
+  background-color: var(--clr-white);
+  color: var(--clr-black);
+}
 :root{
   /*//  --p-clr simply refers to color being permanent, --clr means color will be affected due to theme change  //*/
   /* Black - Grey - White */
@@ -73,13 +77,12 @@
 }
 .dark-theme{
   /* Black - Grey - White */
-  --clr-white: #000000;
+  --clr-white: #1e1e1e;
   --clr-black: #ffffff;
-  --clr-grey-s:#f5f2f1bf;
+  --clr-grey-s:#0c0c0cb9;
   /* Accents */
   --clr-accent-1:#E8624F;
-  --clr-multicolor-gradient:linear-gradient(41.04deg, #ddebf3 1.34%, #ffffff00 42.39%), linear-gradient(201.1deg, #fff0e0 5.95%, #ffffff00 73.3%), linear-gradient(119.18deg, #d7efdf -6.66%, #ffffff00 39.22%), #ffeceb;
-  --clr-multicolor-gradient-high:
+  --clr-multicolor-gradient:
   radial-gradient(at 40% 20%, hsla(28,100%,74%,1) 0px, transparent 50%),
   radial-gradient(at 80% 0%, hsla(189,100%,56%,1) 0px, transparent 50%),
   radial-gradient(at 0% 50%, hsla(355,100%,93%,1) 0px, transparent 50%),
@@ -89,18 +92,22 @@
   radial-gradient(at 0% 0%, hsla(343,100%,76%,1) 0px, transparent 50%),
   hsla(0,100%,50%,1)
   ;
+  --clr-multicolor-gradient-high: #1e1e1e;
 
-  --border-thin:1px solid rgba(203, 203, 203, 0.565);
+  --border-thin:1px solid rgba(203, 203, 203, 0.845);
+
+  --shadow-low:0px 1px 1px 0px #ffffff48, 0px 1px 5px 0px #ffffff41;
+  --shadow-med:4px 1px 2px 0px #ffffff08, 0px 15px 30px 0px #ffffff12;
 }
 
 .navbar{
+  z-index: 10;
   position: fixed;
   top: 2rem;
   left: 0;
   right: 0;
 }
 .navbar-wrapper{
-  z-index: 10;
   max-width: 1000px;
   width: calc(100vw - var(--spacing-m) - var(--spacing-m));
 
@@ -178,12 +185,10 @@
 
 	transition: var(--transition-text-link);
 }
-.regular-link:hover,
-.regular-link:focus {
+.regular-link:hover{
 	color: var(--clr-accent-1);
 }
-.regular-link:hover::after,
-.regular-link:focus::after {
+.regular-link:hover::after {
 	background-color: var(--clr-accent-1);
 	width: 100%;
 }
@@ -216,9 +221,15 @@
 
 /*  Image Header
 ==========================================*/
-
+@keyframes bgFlowMovement {
+  0%{background-position: 0% 50%;}
+  25%{background-position: 100% 50%;}
+  50%{background-position: 0% 50%;}
+  75%{background-position: 100% 50%;}
+  100%{ background-position: 0% 50%;}
+}
 .image-header{
-  z-index: -3;
+  z-index: 1;
   padding-top: var(--padding-vertical-xl);
   padding-bottom: var(--spacing-vertical-regular);
 
@@ -229,13 +240,17 @@
   justify-content: center;
 
   background: var(--clr-multicolor-gradient);
+  background-repeat: no-repeat;
+  background-size: 200% 200%;
+
+  animation: infinite 15s bgFlowMovement ease;
 }
 .image-header.fullscreen{
   height: 100vh;
 }
 .image-header::after{
   content: '';
-  z-index: -1;
+  z-index: 2;
   position: absolute;
 
   background: var(--clr-multicolor-gradient-high);
@@ -244,8 +259,6 @@
   mask-image: url('./assets/PersonalImages/topographic.svg');
   mask-size: contain;
   mask-repeat: no-repeat;
-
-  filter: blur(10px);
 
   width: 100%;
   height: 100%;
@@ -259,10 +272,13 @@
   transform-origin: 50% 50%;
 }
 .image-header__container{
+  z-index: 3;
   width: calc(100vw - var(--spacing-m) - var(--spacing-m));
   max-width: 1380px;
 
   display: flex;
+
+  color: var(--p-clr-black);
 }
 .image-header__text-container{
   flex-basis: 40%;
@@ -328,6 +344,9 @@
 ==========================================*/
 
 .link-cards{
+  width: 100%;
+}
+.link-cards__container{
   margin-left: auto;
   margin-right: auto;
   max-width: 1380px;
@@ -335,13 +354,8 @@
 
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-s);
-}
-.link-cards__container{
-  max-width: 1380px;
 
-  display: flex;
-  flex-wrap: wrap;
+  gap: var(--spacing-s);
 }
 .link-card{
   padding: var(--spacing-s);
@@ -378,11 +392,13 @@
 
 /*  Footer
 ==========================================*/
-
 .footer{
-  margin-top: var(--spacing-vertical-xl);
-  margin-bottom: var(--spacing-vertical-regular);
+  width: 100%;
 
+  padding-top: var(--spacing-vertical-xl);
+  padding-bottom: var(--spacing-vertical-regular);
+}
+.footer__container{
   width: calc(100vw - var(--spacing-m) - var(--spacing-m));
   max-width: 1380px;
 
@@ -393,9 +409,6 @@
 
   border: var(--border-thin);
   border-radius: 1rem;
-
-  color: var(--clr-black);
-  background-color: var(--clr-white);
 }
 .footer-links{
   flex-basis: 25%;
@@ -541,7 +554,7 @@
     border-top: var(--border-thin);
   }
 
-  .footer{
+  .footer__container{
     flex-direction: column-reverse;
   }
   .footer-links{

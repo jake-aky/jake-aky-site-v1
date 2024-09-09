@@ -1,8 +1,5 @@
 import { useState } from "react"
-import Footer from "../__Global/Footer"
-import HeadingBlock from "../__Global/HeadingBlock"
 import ImageHeader from "../__Global/ImageHeader"
-import Navbar from "../__Global/Navbar"
 import Article from "./Article"
 
 const AboutPage = () => {
@@ -10,7 +7,6 @@ const AboutPage = () => {
   const [imgHeaderFullscreen, setImgHeaderFullscreen] = useState(true)
   return (
     <>
-      <Navbar />
       <ImageHeader
         title="Hi, I&apos;m Jake Aky! "
         paragraph="Im a junior font-end-developer specialising within the wordpress sector."
@@ -29,7 +25,6 @@ const AboutPage = () => {
         <img className='article__language' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" />
         <img className='article__language' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" />
       </div> */}
-      <Footer />
     </>
   )
 }

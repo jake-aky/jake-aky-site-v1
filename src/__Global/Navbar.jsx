@@ -2,10 +2,10 @@ import { Link } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars } from "@fortawesome/free-solid-svg-icons"
-const Navbar = () => {
+const Navbar = ({darkTheme}) => {
   const [toggleDropdown, setToggleDropdown] = useState(false)
 	const [toggleBurger, setToggleBurger] = useState(false)
-	const [width, setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = useState(window.innerWidth);
 
 	useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
@@ -25,7 +25,7 @@ const Navbar = () => {
       <div className="navbar-wrapper">
         <div className="navbar-logo">
           <Link to="/">
-            <img className="navbar-logo__img" src="./src/assets/logo-m.png" alt="" />
+            <img className="navbar-logo__img" src={darkTheme ? "./src/assets/logo-m-white.png" : "./src/assets/logo-m.png"} alt="" />
           </Link>
         </div>
         {toggleBurger ?
