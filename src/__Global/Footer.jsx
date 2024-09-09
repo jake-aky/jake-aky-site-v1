@@ -1,8 +1,19 @@
 import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram,faGithub,faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { useState } from "react"
 
 const Footer = () => {
+  const [darkTheme, setDarkTheme] = useState(true)
+  const toggleTheme = () => {
+    if (darkTheme) {
+      setDarkTheme(false)
+      document.body.classList.remove('dark-theme')
+    } else if (!darkTheme) {
+      setDarkTheme(true)
+      document.body.classList.add('dark-theme')
+    }
+  }
   return (
     <div className="footer">
       <div className="footer-links">
@@ -22,9 +33,14 @@ const Footer = () => {
           <h2 className="footer__info">Feel free to check out my other socials that I post on regularly</h2>
         </div>
         <div className="footer-brands__container">
-          <FontAwesomeIcon className="footer__brand" icon={faGithub} />
-          <FontAwesomeIcon className="footer__brand" icon={faInstagram} />
-          <FontAwesomeIcon className="footer__brand" icon={faLinkedin} />
+          <div>
+            <FontAwesomeIcon className="footer__brand" icon={faGithub} />
+            <FontAwesomeIcon className="footer__brand" icon={faInstagram} />
+            <FontAwesomeIcon className="footer__brand" icon={faLinkedin} />
+          </div>
+          <div>
+            <button onClick={toggleTheme}>mode</button>
+          </div>
         </div>
       </div>
     </div>

@@ -24,7 +24,9 @@ const Navbar = () => {
     <div className="navbar">
       <div className="navbar-wrapper">
         <div className="navbar-logo">
-          <img className="navbar-logo__img" src="./src/assets/logo-m.png" alt="" />
+          <Link to="/">
+            <img className="navbar-logo__img" src="./src/assets/logo-m.png" alt="" />
+          </Link>
         </div>
         {toggleBurger ?
         <div>
@@ -33,7 +35,7 @@ const Navbar = () => {
         :
         <>
           <div className="navbar-links">
-            <Link className="regular-link" to="/">About</Link>
+            <Link className="regular-link" to="/about">About</Link>
             <Link className="regular-link" to="/">Contact</Link>
           </div>
           <div className="navbar-button">
